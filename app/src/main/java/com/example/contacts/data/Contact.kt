@@ -2,23 +2,13 @@ package com.example.contacts.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "contacts_data_table")
-class Contact (
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "contact_id")
-    var id: Int,
-
-    @ColumnInfo(name = "contact_image")
-    val image: String,
-
-    @ColumnInfo(name = "contact_name")
-    val name: String,
-
-    @ColumnInfo(name = "contact_number")
-    val phoneNumber: String,
-
-    @ColumnInfo(name = "contact_email")
-    val email: String
+@Entity
+data class Contact(
+    @PrimaryKey(autoGenerate = true) val id: Int? = null,
+    @ColumnInfo(name = "name") val name: String?,
+    @ColumnInfo(name = "phone") val phone: String?,
+    @ColumnInfo(name = "email") val email: String?
 )
