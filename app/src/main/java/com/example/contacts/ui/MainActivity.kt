@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
             contactDao.insertAll(Contact(name="Иван", phone = "+79999999999", email = "example@mail.com"))
             val contacts: List<Contact> = contactDao.getAll()
 
-            // Адаптер
-            /*val contactAdapter = ContactAdapter(contacts.toMutableList())
+
+            val contactAdapter = ContactAdapter(contacts.toMutableList())
             val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
             recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
-            recyclerView.adapter = contactAdapter*/
+            recyclerView.adapter = contactAdapter
         }
     }
 }
